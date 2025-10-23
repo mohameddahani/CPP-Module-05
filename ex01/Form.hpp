@@ -1,56 +1,58 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Bureaucrat.hpp                                     :+:      :+:    :+:   */
+/*   Form.hpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mdahani <mdahani@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/22 18:10:39 by mdahani           #+#    #+#             */
-/*   Updated: 2025/10/23 16:14:56 by mdahani          ###   ########.fr       */
+/*   Updated: 2025/10/23 16:14:39 by mdahani          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef BUREAUCRAT_HPP
-# define BUREAUCRAT_HPP
+#ifndef FORM_HPP
+# define FORM_HPP
 
 // * Includes
 #include <iostream>
 
 // * forward declaration
-class Form;
+class Bureaucrat;
 
 // * Class With Orthodox Canonical Form
-class Bureaucrat {
+class Form {
     // ! private
     private:
         const std::string name;
-        unsigned int grade;
+        bool isSigned;
+        const unsigned int gradeSign;
+        const unsigned int gradeExecute;
 
     // ! public
     public:
         // * Default constructor
-        Bureaucrat();
+        Form();
 
         // * Parametrised constructor
-        Bureaucrat(const std::string &name, const unsigned int &grade);
+        Form(const std::string &name, const unsigned int &gradeSign, const unsigned int &gradeExecute);
 
         // * Copy constructor
-        Bureaucrat(const Bureaucrat &other);
+        Form(const Form &other);
 
         // * Copy assignment operator
-        Bureaucrat &operator=(const Bureaucrat &other);
+        Form &operator=(const Form &other);
 
         // * Destructor
-        ~Bureaucrat();
+        ~Form();
 
         // * Setters & Getters
         std::string getName() const;
-        unsigned int getGrade() const;
+        bool getIsSigned() const;
+        unsigned int getGradeSign() const;
+        unsigned int getGradeExecute() const;
         
         // * Methods
-        void incrementBureaucrat();
-        void decrementBureaucrat();
-        void signForm(const Form &form);
+        void beSigned(const Bureaucrat &bureaucrat);
 
         // * Nested Class
         class GradeTooHighException: public std::exception {
@@ -63,6 +65,6 @@ class Bureaucrat {
         };
 };
 
-std::ostream &operator<<(std::ostream &output, const Bureaucrat &other);
+std::ostream &operator<<(std::ostream &output, const Form &other);
 
 #endif
