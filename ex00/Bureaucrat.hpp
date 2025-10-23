@@ -6,7 +6,7 @@
 /*   By: mdahani <mdahani@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/22 18:10:39 by mdahani           #+#    #+#             */
-/*   Updated: 2025/10/22 18:18:29 by mdahani          ###   ########.fr       */
+/*   Updated: 2025/10/23 11:24:37 by mdahani          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,9 @@ class Bureaucrat {
         // * Default constructor
         Bureaucrat();
 
+        // * Parametrised constructor
+        Bureaucrat(const std::string &name, const unsigned int &grade);
+
         // * Copy constructor
         Bureaucrat(const Bureaucrat &other);
 
@@ -38,10 +41,24 @@ class Bureaucrat {
         ~Bureaucrat();
 
         // * Setters & Getters
-        std::string getName();
-        unsigned int getGrade();
-
+        std::string getName() const;
+        unsigned int getGrade() const;
+        
         // * Methods
+        void incrementBureaucrat();
+        void decrementBureaucrat();
+
+        // * Nested Class
+        class GradeTooHighException: public std::exception {
+            // ! overrinding the what() method
+            const char *what() const _GLIBCXX_NOTHROW;
+        };
+        class GradeTooLowException: public std::exception {
+            // ! overrinding the what() method
+            const char *what() const _GLIBCXX_NOTHROW;
+        };
 };
+
+std::ostream &operator<<(std::ostream &output, const Bureaucrat &other);
 
 #endif
