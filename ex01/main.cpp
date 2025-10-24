@@ -6,7 +6,7 @@
 /*   By: mdahani <mdahani@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/22 18:06:08 by mdahani           #+#    #+#             */
-/*   Updated: 2025/10/23 16:28:24 by mdahani          ###   ########.fr       */
+/*   Updated: 2025/10/24 18:17:02 by mdahani          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,12 +20,19 @@ int main(){
         std::cout << akhnouch << std::endl;
         
         Form form("health", 3, 1);
+        
         form.beSigned(akhnouch);
+        
+        std::cout << "========================================================================" << std::endl;
+        akhnouch.signForm(form);
+        std::cout << "========================================================================" << std::endl;
         
         std::cout << form << std::endl;
     }
     catch (const std::exception &e){
+        std::cout << "========================================================================" << std::endl;
         std::cout << e.what() << std::endl;
+        std::cout << "========================================================================" << std::endl;
     }
     
     // ! test higher
@@ -34,11 +41,18 @@ int main(){
         std::cout << citizen << std::endl;
         
         Form form("health", 3, 1);
+
         form.beSigned(citizen);
+        
+        std::cout << "========================================================================" << std::endl;
+        citizen.signForm(form);
+        std::cout << "========================================================================" << std::endl;
         
         std::cout << form << std::endl;
     }
     catch (const std::exception &e){
+        std::cout << "========================================================================" << std::endl;
         std::cout << e.what() << std::endl;
+        std::cout << "========================================================================" << std::endl;
     }
 }
