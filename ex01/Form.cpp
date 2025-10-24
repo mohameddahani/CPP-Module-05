@@ -6,7 +6,7 @@
 /*   By: mdahani <mdahani@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/22 18:15:56 by mdahani           #+#    #+#             */
-/*   Updated: 2025/10/23 16:25:36 by mdahani          ###   ########.fr       */
+/*   Updated: 2025/10/24 08:19:26 by mdahani          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -71,7 +71,7 @@ unsigned int Form::getGradeExecute() const {
 
 // * Methods
 void Form::beSigned(const Bureaucrat &bureaucrat){
-    if (getGradeSign() <= bureaucrat.getGrade()){
+    if (bureaucrat.getGrade() > getGradeSign()){
         throw Form::GradeTooLowException();
     }
 
