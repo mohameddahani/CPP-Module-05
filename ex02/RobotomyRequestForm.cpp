@@ -6,7 +6,7 @@
 /*   By: mdahani <mdahani@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/24 18:31:28 by mdahani           #+#    #+#             */
-/*   Updated: 2025/10/24 18:47:16 by mdahani          ###   ########.fr       */
+/*   Updated: 2025/10/24 20:04:31 by mdahani          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,11 +67,10 @@ void RobotomyRequestForm::execute(Bureaucrat const &executor) const {
     std::cout << "*drilling noises*" << std::endl;
 
     if (rand() % 2 == 0){
-        std::cout << getTarget() + " has been robotomized successfully!" << std::endl;
-    } else {
         std::cout << "Robotomy failed on " + getTarget() << std::endl;
+    } else {
+        std::cout << getTarget() + " has been robotomized successfully!" << std::endl;
     }
-    
 }
 
 // * Insertion operator

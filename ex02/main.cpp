@@ -6,7 +6,7 @@
 /*   By: mdahani <mdahani@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/22 18:06:08 by mdahani           #+#    #+#             */
-/*   Updated: 2025/10/24 19:03:43 by mdahani          ###   ########.fr       */
+/*   Updated: 2025/10/24 20:39:14 by mdahani          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@
 int main(){
     // todo: ShrubberyCreationForm
     // ! test higher
-    std::cout << GREEN << "ShrubberyCreationForm" << std::endl;
+    std::cout << GREEN << "ShrubberyCreationForm:" << std::endl;
     std::cout << BLUE;
     try {
         Bureaucrat akhnouch("akhnouch", 2);
@@ -79,7 +79,7 @@ int main(){
 
     // todo: RobotomyRequestForm
     // ! test higher
-    std::cout << GREEN << "RobotomyRequestForm" << std::endl;
+    std::cout << GREEN << "RobotomyRequestForm:" << std::endl;
     std::cout << BLUE;
     try {
         Bureaucrat akhnouch("akhnouch", 2);
@@ -106,10 +106,10 @@ int main(){
     // ! test lower
     std::cout << RED;
     try {
-        Bureaucrat citizen("citizen", 145);
+        Bureaucrat citizen("citizen", 140);
         std::cout << citizen << std::endl;
         
-        RobotomyRequestForm form("health");
+        RobotomyRequestForm form("robot");
         
         form.beSigned(citizen);
         
