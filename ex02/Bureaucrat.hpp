@@ -6,7 +6,7 @@
 /*   By: mdahani <mdahani@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/22 18:10:39 by mdahani           #+#    #+#             */
-/*   Updated: 2025/10/23 16:14:56 by mdahani          ###   ########.fr       */
+/*   Updated: 2025/10/24 11:08:08 by mdahani          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@
 #include <iostream>
 
 // * forward declaration
-class Form;
+class AForm;
 
 // * Class With Orthodox Canonical Form
 class Bureaucrat {
@@ -50,7 +50,8 @@ class Bureaucrat {
         // * Methods
         void incrementBureaucrat();
         void decrementBureaucrat();
-        void signForm(const Form &form);
+        void signForm(const AForm &form);
+        void executeForm(AForm const & form);
 
         // * Nested Class
         class GradeTooHighException: public std::exception {

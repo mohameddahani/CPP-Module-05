@@ -6,12 +6,12 @@
 /*   By: mdahani <mdahani@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/22 18:10:39 by mdahani           #+#    #+#             */
-/*   Updated: 2025/10/23 20:06:34 by mdahani          ###   ########.fr       */
+/*   Updated: 2025/10/24 18:03:01 by mdahani          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FORM_HPP
-# define FORM_HPP
+#ifndef AFORM_HPP
+# define AFORM_HPP
 
 // * Includes
 #include <iostream>
@@ -43,7 +43,7 @@ class AForm {
         AForm &operator=(const AForm &other);
 
         // * Destructor
-        ~AForm();
+        virtual ~AForm();
 
         // * Setters & Getters
         std::string getName() const;
@@ -53,6 +53,7 @@ class AForm {
         
         // * Methods
         void beSigned(const Bureaucrat &bureaucrat);
+        virtual void execute(Bureaucrat const & executor) const = 0;
 
         // * Nested Class
         class GradeTooHighException: public std::exception {

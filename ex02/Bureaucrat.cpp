@@ -6,12 +6,12 @@
 /*   By: mdahani <mdahani@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/22 18:15:56 by mdahani           #+#    #+#             */
-/*   Updated: 2025/10/23 16:15:09 by mdahani          ###   ########.fr       */
+/*   Updated: 2025/10/24 10:42:57 by mdahani          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Bureaucrat.hpp"
-#include "Form.hpp"
+#include "AForm.hpp"
 
 // ? Exception: An exception is a runtime error or an unexpected event that occurs during program execution.
 
@@ -98,12 +98,16 @@ void Bureaucrat::decrementBureaucrat(){
     this->grade++;
 }
 
-void Bureaucrat::signForm(const Form &form){
+void Bureaucrat::signForm(const AForm &form){
     if (form.getIsSigned()){
         std::cout << getName() << " signed " << form.getName() << std::endl;
     } else {
         std::cout << getName() << " couldn’t sign " << form.getName() << " because " << "The Grade of Bureaucrat is Lower" << std::endl;
     }
+}
+
+void Bureaucrat::executeForm(AForm const &form){
+    form.execute(*this);
 }
 
 // * Nested Class
