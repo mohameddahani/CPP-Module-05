@@ -6,7 +6,7 @@
 /*   By: mdahani <mdahani@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/22 18:06:08 by mdahani           #+#    #+#             */
-/*   Updated: 2025/10/24 20:57:40 by mdahani          ###   ########.fr       */
+/*   Updated: 2025/10/25 10:19:43 by mdahani          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 #include "ShrubberyCreationForm.hpp"
 #include "RobotomyRequestForm.hpp"
 #include "PresidentialPardonForm.hpp"
+#include "Intern.hpp"
 
 #define RESET   "\033[0m"
 #define GREEN   "\033[32m"
@@ -23,24 +24,19 @@
 #define BLUE    "\033[34m"
 
 int main(){
-    // todo: ShrubberyCreationForm
-    // ! test higher
-    std::cout << GREEN << "ShrubberyCreationForm:" << std::endl;
+    // ! Good test
     std::cout << BLUE;
     try {
         Bureaucrat akhnouch("akhnouch", 2);
         std::cout << akhnouch << std::endl;
         
-        ShrubberyCreationForm form("garden");
+        Intern intern;
+        AForm *form = intern.makeForm("ShrubberyCreationForm", "garden");
 
-        form.beSigned(akhnouch);
-
-        std::cout << "========================================================================" << std::endl;
-        std::cout << form << std::endl;
-        std::cout << "========================================================================" << std::endl;
+        form->beSigned(akhnouch);
         
         std::cout << "========================================================================" << std::endl;
-        form.execute(akhnouch);
+        form->execute(akhnouch);
         std::cout << "========================================================================" << std::endl;
     }
     catch (const std::exception &e){
@@ -49,137 +45,30 @@ int main(){
         std::cout << "========================================================================" << std::endl;
     }
     
-    // ! test lower
+    // ! Bad test
     std::cout << RED;
     try {
+
         Bureaucrat citizen("citizen", 145);
         std::cout << citizen << std::endl;
-        
-        ShrubberyCreationForm form("health");
-        
-        form.beSigned(citizen);
-        
-        std::cout << "========================================================================" << std::endl;
-        citizen.signForm(form);
-        std::cout << "========================================================================" << std::endl;
-        
-        std::cout << "========================================================================" << std::endl;
-        std::cout << form << std::endl;
-        std::cout << "========================================================================" << std::endl;
-        
-        std::cout << "========================================================================" << std::endl;
-        form.execute(citizen);
-        std::cout << "========================================================================" << std::endl;
-    }
-    catch (const std::exception &e){
-        std::cout << "========================================================================" << std::endl;
-        std::cout << e.what() << std::endl;
-        std::cout << "========================================================================" << std::endl;
-    }
-
-
-    // todo: RobotomyRequestForm
-    // ! test higher
-    std::cout << GREEN << "RobotomyRequestForm:" << std::endl;
-    std::cout << BLUE;
-    try {
-        Bureaucrat akhnouch("akhnouch", 2);
-        std::cout << akhnouch << std::endl;
-        
-        RobotomyRequestForm form("garden");
-
-        form.beSigned(akhnouch);
-
-        std::cout << "========================================================================" << std::endl;
-        std::cout << form << std::endl;
-        std::cout << "========================================================================" << std::endl;
-        
-        std::cout << "========================================================================" << std::endl;
-        form.execute(akhnouch);
-        std::cout << "========================================================================" << std::endl;
-    }
-    catch (const std::exception &e){
-        std::cout << "========================================================================" << std::endl;
-        std::cout << e.what() << std::endl;
-        std::cout << "========================================================================" << std::endl;
-    }
     
-    // ! test lower
-    std::cout << RED;
-    try {
-        Bureaucrat citizen("citizen", 140);
-        std::cout << citizen << std::endl;
+        Intern intern;
+        AForm *form = intern.makeForm("test", "health");
+        if (!form){
+            throw std::bad_alloc();
+        }
         
-        RobotomyRequestForm form("robot");
         
-        form.beSigned(citizen);
-        
-        std::cout << "========================================================================" << std::endl;
-        citizen.signForm(form);
-        std::cout << "========================================================================" << std::endl;
+        form->beSigned(citizen);
         
         std::cout << "========================================================================" << std::endl;
-        std::cout << form << std::endl;
+        citizen.signForm(*form);
         std::cout << "========================================================================" << std::endl;
         
         std::cout << "========================================================================" << std::endl;
-        form.execute(citizen);
+        form->execute(citizen);
         std::cout << "========================================================================" << std::endl;
-    }
-    catch (const std::exception &e){
-        std::cout << "========================================================================" << std::endl;
-        std::cout << e.what() << std::endl;
-        std::cout << "========================================================================" << std::endl;
-    }
 
-
-    // todo: PresidentialPardonForm
-    // ! test higher
-    std::cout << GREEN << "PresidentialPardonForm:" << std::endl;
-    std::cout << BLUE;
-    try {
-        Bureaucrat akhnouch("akhnouch", 2);
-        std::cout << akhnouch << std::endl;
-        
-        PresidentialPardonForm form("weld aicha");
-
-        form.beSigned(akhnouch);
-
-        std::cout << "========================================================================" << std::endl;
-        std::cout << form << std::endl;
-        std::cout << "========================================================================" << std::endl;
-        
-        std::cout << "========================================================================" << std::endl;
-        form.execute(akhnouch);
-        std::cout << "========================================================================" << std::endl;
-    }
-    catch (const std::exception &e){
-        std::cout << "========================================================================" << std::endl;
-        std::cout << e.what() << std::endl;
-        std::cout << "========================================================================" << std::endl;
-    }
-    
-    // ! test lower
-    std::cout << RED;
-    try {
-        Bureaucrat citizen("citizen", 25);
-        std::cout << citizen << std::endl;
-        
-        PresidentialPardonForm form("beznaz");
-        
-        form.beSigned(citizen);
-        
-        std::cout << "========================================================================" << std::endl;
-        citizen.signForm(form);
-        std::cout << "========================================================================" << std::endl;
-        
-        std::cout << "========================================================================" << std::endl;
-        std::cout << form << std::endl;
-        std::cout << "========================================================================" << std::endl;
-        
-        std::cout << "========================================================================" << std::endl;
-        form.execute(citizen);
-        std::cout << "========================================================================" << std::endl;
     }
     catch (const std::exception &e){
         std::cout << "========================================================================" << std::endl;

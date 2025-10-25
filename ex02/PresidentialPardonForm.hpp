@@ -6,7 +6,7 @@
 /*   By: mdahani <mdahani@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/24 20:46:32 by mdahani           #+#    #+#             */
-/*   Updated: 2025/10/24 20:47:35 by mdahani          ###   ########.fr       */
+/*   Updated: 2025/10/25 08:57:50 by mdahani          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,6 @@
 
 // * Includes
 #include <iostream>
-#include <fstream>
 #include "AForm.hpp"
 #include "Bureaucrat.hpp"
 
