@@ -6,7 +6,7 @@
 /*   By: mdahani <mdahani@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/24 08:32:25 by mdahani           #+#    #+#             */
-/*   Updated: 2025/10/24 18:02:48 by mdahani          ###   ########.fr       */
+/*   Updated: 2025/10/25 13:11:44 by mdahani          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -79,12 +79,12 @@ void AForm::beSigned(const Bureaucrat &bureaucrat){
 }
 
 // * Nested Class
-// ! _GLIBCXX_NOTHROW: is mean (noexcept) will not throw
-const char *AForm::GradeTooHighException::what() const _GLIBCXX_NOTHROW {
+// ! throw(): is mean will not throw
+const char *AForm::GradeTooHighException::what() const throw() {
     return "AForm grade is too high!";
 }
 
-const char *AForm::GradeTooLowException::what() const _GLIBCXX_NOTHROW {
+const char *AForm::GradeTooLowException::what() const throw() {
     return "AForm grade is too low!";
 }
 

@@ -6,7 +6,7 @@
 /*   By: mdahani <mdahani@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/24 08:49:06 by mdahani           #+#    #+#             */
-/*   Updated: 2025/10/24 18:03:35 by mdahani          ###   ########.fr       */
+/*   Updated: 2025/10/25 13:12:24 by mdahani          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -112,7 +112,7 @@ void ShrubberyCreationForm::execute(Bureaucrat const &executor) const {
 }
 
 // * Nested Class
-const char * ShrubberyCreationForm::ErrorCreateFile::what() const _GLIBCXX_NOTHROW {
+const char * ShrubberyCreationForm::ErrorCreateFile::what() const throw() {
     return "Cannot Create output file!";
 }
 

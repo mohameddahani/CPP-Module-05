@@ -6,7 +6,7 @@
 /*   By: mdahani <mdahani@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/24 20:46:32 by mdahani           #+#    #+#             */
-/*   Updated: 2025/10/25 08:57:50 by mdahani          ###   ########.fr       */
+/*   Updated: 2025/10/25 13:12:17 by mdahani          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,7 +49,7 @@ class PresidentialPardonForm: public AForm {
 
         // * Nested Class
         class ErrorCreateFile: public std::exception {
-             const char *what() const _GLIBCXX_NOTHROW;
+             const char *what() const throw();
         };
 };
 

@@ -6,7 +6,7 @@
 /*   By: mdahani <mdahani@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/22 18:10:39 by mdahani           #+#    #+#             */
-/*   Updated: 2025/10/24 18:03:01 by mdahani          ###   ########.fr       */
+/*   Updated: 2025/10/25 13:12:42 by mdahani          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,11 +58,11 @@ class AForm {
         // * Nested Class
         class GradeTooHighException: public std::exception {
             // ! overrinding the what() method
-            const char *what() const _GLIBCXX_NOTHROW;
+            const char *what() const throw();
         };
         class GradeTooLowException: public std::exception {
             // ! overrinding the what() method
-            const char *what() const _GLIBCXX_NOTHROW;
+            const char *what() const throw();
         };
 };
 
