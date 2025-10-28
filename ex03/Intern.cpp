@@ -6,7 +6,7 @@
 /*   By: mdahani <mdahani@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/25 09:02:35 by mdahani           #+#    #+#             */
-/*   Updated: 2025/10/25 10:13:41 by mdahani          ###   ########.fr       */
+/*   Updated: 2025/10/28 10:01:26 by mdahani          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,11 @@
 
 // * Default constructor
 Intern::Intern(){
+    // * fill the array by NULL
+    for (int i = 0; i < 3; i++){
+        allForms[i] = NULL;
+    }
+
     std::cout << "Default constructor of Intern is called" << std::endl;
 }
 
@@ -55,12 +60,16 @@ AForm *Intern::makeForm(const std::string &formName, const std::string &target){
         "RobotomyRequestForm",
         "PresidentialPardonForm",
     };
+    
 
+    // ! fill the array if empty    
+    if (!allForms[0])
+        this->allForms[0] = new ShrubberyCreationForm(target);
+    if (!allForms[1])
+        this->allForms[1] = new RobotomyRequestForm(target);
+    if (!allForms[2])
+        this->allForms[2] = new PresidentialPardonForm(target);
 
-    // ! fill the array
-    this->allForms[0] = new ShrubberyCreationForm(target);
-    this->allForms[1] = new RobotomyRequestForm(target);
-    this->allForms[2] = new PresidentialPardonForm(target);
 
     for (int i = 0; i < 3; i++){
         if (formName == allFormsNames[i]){

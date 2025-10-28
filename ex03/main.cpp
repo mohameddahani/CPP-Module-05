@@ -6,7 +6,7 @@
 /*   By: mdahani <mdahani@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/22 18:06:08 by mdahani           #+#    #+#             */
-/*   Updated: 2025/10/25 10:19:43 by mdahani          ###   ########.fr       */
+/*   Updated: 2025/10/28 09:59:08 by mdahani          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,12 +32,17 @@ int main(){
         
         Intern intern;
         AForm *form = intern.makeForm("ShrubberyCreationForm", "garden");
+        // AForm *form2 = intern.makeForm("ShrubberyCreationForm", "garden");
 
         form->beSigned(akhnouch);
+        // form2->beSigned(akhnouch);
         
         std::cout << "========================================================================" << std::endl;
         form->execute(akhnouch);
         std::cout << "========================================================================" << std::endl;
+        // std::cout << "========================================================================" << std::endl;
+        // form2->execute(akhnouch);
+        // std::cout << "========================================================================" << std::endl;
     }
     catch (const std::exception &e){
         std::cout << "========================================================================" << std::endl;
